@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Alfarisi — Fullstack Developer Portfolio</title>
+  <meta name="description" content="Portofolio Ahmad Alfarisi, Fullstack Developer berbasis di Karanganyar. Membangun aplikasi web dengan Laravel, PHP, MySQL, dan JavaScript.">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@600;800&family=Plus+Jakarta+Sans:ital,wght@0,500;0,700;0,800;1,700&family=Space+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- INTERACTIVE 3D BACKGROUND CANVAS -->
+  <canvas id="canvas3D" class="canvas-3d-bg"></canvas>
+
+  <!-- INTERACTIVE 3D FLOATING GEOMETRIC SHAPES -->
+  <div class="interactive-3d-scene">
+    <div class="shape-3d shape-sphere" id="shape1"></div>
+    <div class="shape-3d shape-cube" id="shape2"></div>
+    <div class="shape-3d shape-torus" id="shape3"></div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#" class="nav-logo">
+        <span class="logo-box">AA</span>
+        <span class="logo-text">Ahmad Alfarisi</span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#tools" class="nav-link">Tech Stack</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="mobile-drawer-cta"><a href="#contact" class="btn btn-acid btn-full">Contact Me ⚡</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Ganti mode terang/gelap">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+
+        <a href="#contact" class="btn btn-acid btn-pill nav-cta">
+          <span class="cta-text-full">Contact Me ⚡</span>
+          <span class="cta-text-short">Contact</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (ABOUT) -->
+    <section class="section hero-section" id="about">
+      <div class="container hero-container">
+        
+        <!-- LEFT: INTERACTIVE 3D TILT IDENTITY CARD -->
+        <div class="identity-card-wrapper">
+          <div class="identity-card card-acid tilt-card-3d">
+            
+            <div class="card-rank-badge">Fullstack Dev</div>
+
+            <div class="identity-avatar-frame">
+              <img src="https://porto.arufaa.my.id/fotoo.png" onerror="this.onerror=null; this.src='https://placehold.co/400x400/181818/1DB954?text=Ahmad+Alfarisi';" alt="Ahmad Alfarisi" class="identity-avatar">
+              <div class="avatar-badge">🚀</div>
+            </div>
+
+            <h2 class="identity-name">Ahmad Alfarisi</h2>
+            <p class="identity-role">Laravel &amp; PHP Specialist</p>
+            <p class="identity-bio">
+              Fokus pada backend &amp; fullstack development — membangun ERP, CRM, absensi, hingga platform publik berskala besar.
+            </p>
+
+            <div class="identity-location">
+              <span class="loc-pin">📍</span>
+              <span>Karanganyar, Jawa Tengah</span>
+            </div>
+
+            <div class="social-links-grid">
+              <a href="https://github.com/Aalfars" target="_blank" rel="noopener" class="social-btn social-gh btn-3d">
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/ahmad-alfarisi-/" target="_blank" rel="noopener" class="social-btn social-li btn-3d">
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.instagram.com/aalfars_/" target="_blank" rel="noopener" class="social-btn social-ig btn-3d">
+                <span>Instagram</span>
+              </a>
+              <button class="social-btn social-em copy-email-btn btn-3d" data-email="aalfarss173@gmail.com">
+                <span>Email 📋</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: HERO CONTENT & STATS -->
+        <div class="hero-content">
+          
+          <div class="pill-badge-3d">
+            <span class="sparkle">✦</span>
+            <span>BUILDING SCALABLE WEB SYSTEMS</span>
+          </div>
+
+          <h1 class="hero-title">
+            FULLSTACK<br>
+            <span class="highlight-acid">DEVELOPER</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Membangun aplikasi web yang fungsional, bersih, dan scalable — dari arsitektur backend Laravel sampai UI yang terasa hidup.
+          </p>
+
+          <div class="hero-chips-group">
+            <span class="chip chip-acid badge-3d">Laravel 11</span>
+            <span class="chip chip-pink badge-3d">PHP Native</span>
+            <span class="chip chip-cyan badge-3d">MySQL &amp; Postgres</span>
+            <span class="chip chip-yellow badge-3d">REST API &amp; AJAX</span>
+          </div>
+
+          <!-- STATS BANNER -->
+          <div class="stats-summary-card tilt-card-3d">
+            <div class="stats-grid">
+              <div class="stat-box">
+                <span class="stat-tag">PROJECTS</span>
+                <div class="stat-value" data-target="7">0</div>
+                <span class="stat-label">Projects Built</span>
+              </div>
+
+              <div class="stat-box">
+                <span class="stat-tag">EXPERIENCE</span>
+                <div class="stat-value" data-target="3">0</div>
+                <span class="stat-label">Years Active</span>
+              </div>
+
+              <div class="stat-box">
+                <span class="stat-tag">MAIN STACK</span>
+                <div class="stat-value" data-target="90" data-suffix="%">0%</div>
+                <span class="stat-label">Laravel Proficiency</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        
+        <div class="section-header text-center reveal">
+          <span class="section-tag tag-pink badge-3d">Selected Work</span>
+          <h2 class="section-title">RECENT PROJECTS</h2>
+          <p class="section-subtitle">
+            Dari sistem internal manajemen perusahaan hingga platform baca manga publik berskala besar.
+          </p>
+        </div>
+
+        <!-- TRACKLIST LEADERBOARD TABLE -->
+        <div class="project-table-card reveal tilt-card-3d">
+          <div class="table-header">
+            <span class="col-num">#</span>
+            <span class="col-title">PROJECT NAME</span>
+            <span class="col-tech">TECH STACK</span>
+            <span class="col-action">ACTION</span>
+          </div>
+
+          <!-- ITEM #1 -->
+          <div class="table-row row-featured">
+            <span class="row-rank">1</span>
+            <div class="row-main">
+              <img src="https://porto.arufaa.my.id/image.png" alt="MangaRupa" class="row-thumb">
+              <div>
+                <h4 class="row-name">MangaRupa Platform</h4>
+                <span class="row-sub">Live Reading Platform • 2026</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">Laravel</span>
+              <span class="tag-pill">MySQL</span>
+              <span class="tag-pill">Tailwind</span>
+            </div>
+            <a href="https://mangarupa.my.id" target="_blank" rel="noopener" class="btn btn-acid btn-sm btn-3d">
+              <span>Visit Site →</span>
+            </a>
+          </div>
+
+          <!-- ITEM #2 -->
+          <div class="table-row">
+            <span class="row-rank">2</span>
+            <div class="row-main">
+              <img src="https://porto.arufaa.my.id/richzspot.png" alt="RichzSpot" class="row-thumb">
+              <div>
+                <h4 class="row-name">RichzSpot Absensi System</h4>
+                <span class="row-sub">Internal App • 2025</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">Laravel</span>
+              <span class="tag-pill">Bootstrap</span>
+              <span class="tag-pill">AJAX</span>
+            </div>
+            <a href="#contact" class="btn btn-pink btn-sm btn-3d">
+              <span>Detail →</span>
+            </a>
+          </div>
+
+          <!-- ITEM #3 -->
+          <div class="table-row">
+            <span class="row-rank">3</span>
+            <div class="row-main">
+              <img src="https://porto.arufaa.my.id/erp_gbp.png" alt="ERP" class="row-thumb">
+              <div>
+                <h4 class="row-name">Enterprise ERP System</h4>
+                <span class="row-sub">Enterprise Management • 2025</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">CodeIgniter 3</span>
+              <span class="tag-pill">Linux VPS</span>
+            </div>
+            <a href="#contact" class="btn btn-yellow btn-sm btn-3d">
+              <span>Detail →</span>
+            </a>
+          </div>
+
+          <!-- ITEM #4 -->
+          <div class="table-row">
+            <span class="row-rank">4</span>
+            <div class="row-main">
+              <img src="https://porto.arufaa.my.id/crm.png" alt="CRM" class="row-thumb">
+              <div>
+                <h4 class="row-name">CRM Management System</h4>
+                <span class="row-sub">Sales Analytics • 2025</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">Laravel</span>
+              <span class="tag-pill">MySQL</span>
+            </div>
+            <a href="#contact" class="btn btn-cyan btn-sm btn-3d">
+              <span>Detail →</span>
+            </a>
+          </div>
+
+          <!-- ITEM #5 -->
+          <div class="table-row">
+            <span class="row-rank">5</span>
+            <div class="row-main">
+              <img src="https://porto.arufaa.my.id/logbook.png" alt="Logbook" class="row-thumb">
+              <div>
+                <h4 class="row-name">Log Book System</h4>
+                <span class="row-sub">Activity Tracker • 2024</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">CodeIgniter 3</span>
+              <span class="tag-pill">AJAX</span>
+            </div>
+            <a href="#contact" class="btn btn-purple btn-sm btn-3d">
+              <span>Detail →</span>
+            </a>
+          </div>
+
+          <!-- ITEM #6 -->
+          <div class="table-row">
+            <span class="row-rank">6</span>
+            <div class="row-main">
+              <div class="row-thumb placeholder-thumb">🎟️</div>
+              <div>
+                <h4 class="row-name">Topup &amp; Voucher System</h4>
+                <span class="row-sub">Digital Voucher Engine • 2024</span>
+              </div>
+            </div>
+            <div class="row-tech-tags">
+              <span class="tag-pill">PHP Native</span>
+              <span class="tag-pill">JS</span>
+            </div>
+            <a href="#contact" class="btn btn-acid btn-sm btn-3d">
+              <span>Detail →</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- 2-COLUMN SHOWCASE ITEMS -->
+        <div class="showcase-list">
+          
+          <!-- SHOWCASE PROJECT 1: MangaRupa -->
+          <article class="showcase-item reveal">
+            <div class="showcase-frame frame-acid tilt-card-3d">
+              <div class="top-number-badge">#1</div>
+              <img src="https://porto.arufaa.my.id/image.png" alt="MangaRupa Platform Screenshot" class="showcase-img" loading="lazy">
+            </div>
+
+            <div class="showcase-content">
+              <span class="sticker-tag tag-acid badge-3d">★ Live Site</span>
+              <h3 class="showcase-title">MANGARUPA PLATFORM</h3>
+              <p class="showcase-desc">
+                Platform baca manga, manhwa, dan manhua berskala besar dengan koleksi ribuan chapter update harian, genre filter, pencarian kilat, sistem rekomendasi, dan reader responsif.
+              </p>
+              
+              <div class="showcase-tags">
+                <span class="tag-pill">Laravel</span>
+                <span class="tag-pill">MySQL</span>
+                <span class="tag-pill">Tailwind CSS</span>
+                <span class="tag-pill">REST API</span>
+                <span class="tag-pill">VPS Linux</span>
+              </div>
+
+              <div class="showcase-action">
+                <a href="https://mangarupa.my.id" target="_blank" rel="noopener" class="btn btn-acid btn-pill btn-3d">
+                  <span>Lihat Site →</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SHOWCASE PROJECT 2: RichzSpot (REVERSE) -->
+          <article class="showcase-item showcase-reverse reveal">
+            <div class="showcase-frame frame-pink tilt-card-3d">
+              <div class="top-number-badge">#2</div>
+              <img src="https://porto.arufaa.my.id/richzspot.png" alt="System Absensi App RichzSpot" class="showcase-img" loading="lazy">
+            </div>
+
+            <div class="showcase-content">
+              <span class="sticker-tag tag-pink badge-3d">System Absensi</span>
+              <h3 class="showcase-title">RICHZSPOT ABSENSI</h3>
+              <p class="showcase-desc">
+                Aplikasi absensi dengan fitur voucher, tracking kehadiran realtime via AJAX, dan laporan otomatis untuk monitoring tim internal secara efisien.
+              </p>
+              
+              <div class="showcase-tags">
+                <span class="tag-pill">Laravel</span>
+                <span class="tag-pill">Bootstrap</span>
+                <span class="tag-pill">MySQL</span>
+                <span class="tag-pill">AJAX</span>
+              </div>
+
+              <div class="showcase-action">
+                <a href="#contact" class="btn btn-pink btn-pill btn-3d">
+                  <span>Lihat Detail →</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK SECTION -->
+    <section class="section tools-section" id="tools">
+      <div class="container">
+        
+        <div class="section-header text-center reveal">
+          <span class="section-tag tag-cyan badge-3d">Tech Arsenal</span>
+          <h2 class="section-title">TECH STACK</h2>
+          <p class="section-subtitle">
+            Bahasa pemrograman, framework, dan tools utama yang digunakan sehari-hari.
+          </p>
+        </div>
+
+        <div class="tools-grid reveal">
+          
+          <!-- #1 LARAVEL -->
+          <div class="tool-card tool-rank-1 card-3d-hover">
+            <span class="tool-rank-number">#1</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" alt="Laravel" class="tool-icon">
+              <div>
+                <h4 class="tool-name">Laravel</h4>
+                <span class="tool-badge">EXPERT • 90%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-acid" style="width: 90%;"></div>
+            </div>
+          </div>
+
+          <!-- #2 PHP NATIVE -->
+          <div class="tool-card tool-rank-2 card-3d-hover">
+            <span class="tool-rank-number">#2</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" class="tool-icon">
+              <div>
+                <h4 class="tool-name">PHP Native</h4>
+                <span class="tool-badge">EXPERT • 85%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-pink" style="width: 85%;"></div>
+            </div>
+          </div>
+
+          <!-- #3 MYSQL -->
+          <div class="tool-card tool-rank-3 card-3d-hover">
+            <span class="tool-rank-number">#3</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="tool-icon">
+              <div>
+                <h4 class="tool-name">MySQL / PostgreSQL</h4>
+                <span class="tool-badge">MIDDLE • 75%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-cyan" style="width: 75%;"></div>
+            </div>
+          </div>
+
+          <!-- #4 BOOTSTRAP & TAILWIND -->
+          <div class="tool-card tool-rank-4 card-3d-hover">
+            <span class="tool-rank-number">#4</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="tool-icon">
+              <div>
+                <h4 class="tool-name">Bootstrap / Tailwind</h4>
+                <span class="tool-badge">MIDDLE • 70%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-yellow" style="width: 70%;"></div>
+            </div>
+          </div>
+
+          <!-- #5 JAVASCRIPT -->
+          <div class="tool-card tool-rank-5 card-3d-hover">
+            <span class="tool-rank-number">#5</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tool-icon">
+              <div>
+                <h4 class="tool-name">JavaScript</h4>
+                <span class="tool-badge">MIDDLE • 65%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-purple" style="width: 65%;"></div>
+            </div>
+          </div>
+
+          <!-- DEVOPS -->
+          <div class="tool-card tool-rank-extra card-3d-hover">
+            <span class="tool-rank-number">#6</span>
+            <div class="tool-info">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tool-icon">
+              <div>
+                <h4 class="tool-name">DevOps / Linux VPS</h4>
+                <span class="tool-badge">LEARNING • 40%</span>
+              </div>
+            </div>
+            <div class="tool-progress-wrapper">
+              <div class="tool-progress-bar bar-white" style="width: 40%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="misc-tools-container reveal">
+          <span class="sticker-chip badge-3d">Git</span>
+          <span class="sticker-chip badge-3d">VS Code</span>
+          <span class="sticker-chip badge-3d">CodeIgniter</span>
+          <span class="sticker-chip badge-3d">REST API</span>
+          <span class="sticker-chip badge-3d">AJAX / Fetch</span>
+          <span class="sticker-chip badge-3d">Composer / npm</span>
+          <span class="sticker-chip badge-3d">Ubuntu Server</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        
+        <div class="section-header text-center reveal">
+          <span class="section-tag tag-acid badge-3d">Journey So Far</span>
+          <h2 class="section-title">WORK EXPERIENCE</h2>
+        </div>
+
+        <div class="timeline-container">
+          
+          <div class="timeline-card reveal tilt-card-3d">
+            <div class="timeline-period-badge badge-acid badge-3d">2025 — NOW</div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Full Stack Developer</h3>
+              <p class="timeline-desc">
+                Membangun sistem reseller, portal landing page perusahaan, serta platform manajemen berbasis Laravel dan Native PHP yang andal, aman, dan scalable.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-card reveal tilt-card-3d">
+            <div class="timeline-period-badge badge-pink badge-3d">2024 — 2025</div>
+            <div class="timeline-body">
+              <h3 class="timeline-role">Intern Full Stack Developer</h3>
+              <p class="timeline-desc">
+                Memulai perjalanan profesional dengan merancang dan mengembangkan aplikasi web interaktif menggunakan HTML, CSS, JavaScript, PHP, dan MySQL.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        
+        <div class="contact-box-wrapper reveal">
+          <div class="contact-box tilt-card-3d">
+            
+            <div class="section-header text-center">
+              <span class="section-tag tag-acid badge-3d">Get In Touch</span>
+              <h2 class="section-title">LET'S WORK TOGETHER</h2>
+              <p class="section-subtitle">
+                Siap memulai proyek baru bersama? Saya terbuka untuk pekerjaan freelance, kolaborasi tim, maupun pembuatan sistem kustom.
+              </p>
+            </div>
+
+            <div class="contact-info-grid">
+              <div class="contact-item">
+                <span class="contact-label">EMAIL DIRECT</span>
+                <a href="mailto:aalfarss173@gmail.com" class="contact-value">aalfarss173@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">LOKASI</span>
+                <span class="contact-value">Karanganyar, Jawa Tengah</span>
+              </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Nama Lengkap</label>
+                  <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Alamat Email</label>
+                  <input type="email" id="email" placeholder="nama@email.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="budget">Estimasi Budget Project</label>
+                <select id="budget">
+                  <option value="">Pilih estimasi budget...</option>
+                  <option value="< 3jt">&lt; Rp 3.000.000</option>
+                  <option value="3jt - 7jt">Rp 3.000.000 – Rp 7.000.000</option>
+                  <option value="7jt - 15jt">Rp 7.000.000 – Rp 15.000.000</option>
+                  <option value="> 15jt">&gt; Rp 15.000.000</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Pesan / Detail Project</label>
+                <textarea id="message" rows="4" placeholder="Ceritakan tentang proyek web yang ingin Anda bangun..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-acid btn-full btn-3d">
+                <span>KIRIM PESAN SEKARANG ⚡</span>
+              </button>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-copy">© 2026 Ahmad Alfarisi — Fullstack Developer</span>
+      </div>
+      <div class="footer-quote">
+        "Code is like humor. When you have to explain it, it's bad." — Cory House
+      </div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast">
+    <span class="toast-icon">✨</span>
+    <span id="toastMessage">Pesan berhasil dikirim!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
